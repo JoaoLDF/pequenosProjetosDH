@@ -6,7 +6,7 @@ let series = [{id:1,name:"Friends"},{id:2,name:"Breaking Bad"},{id:3,name:"Dexte
 app.get("/serie/:id?", (req, res)=> {
     let {id} = req.params;
     let filtro = series.filter((item) =>item.id == id);
-    filtro.length>=1?filtro.forEach((item)=>res.send(item)):res.send("id não cadastrado");
+    filtro.length>=1?filtro.forEach((item)=>res.send(item.name)):res.send("id não cadastrado");
 });
 
 app.listen(2000,()=>console.log('servidor rodando na porta 2000'));
